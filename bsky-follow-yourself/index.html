@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fun tool to follow yourself on Bluesky. Lead by example - if you don't follow yourself, why should others?">
+    <meta name="keywords" content="bluesky, follow, self-follow, social media, bsky">
+    <meta name="author" content="Benedikt Kolbeinsson">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <link rel="canonical" href="https://benedikt.phd/bsky-follow-yourself">
+    
+    <meta property="og:title" content="Follow Yourself on Bluesky">
+    <meta property="og:site_name" content="Benedikt Kolbeinsson">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://benedikt.phd/bsky-follow-yourself">
+    <meta property="og:description" content="A fun tool to follow yourself on Bluesky. Lead by example - if you don't follow yourself, why should others?">
+    <meta property="og:image" content="https://benedikt.phd/bsky-follow-yourself/banner.png">
+    <meta property="og:image:alt" content="Follow yourself on bluesky banner">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/favicon/favicon.png">
+    
+    <title>Follow Yourself on Bluesky</title>
+    <style>
+        :root {
+            --bg-color: #111111;
+            --card-bg: #1a1a1a;
+            --text-color: #ffffff;
+            --text-secondary: #888888;
+            --border-color: #333333;
+            --primary-color: #0085ff;
+            --primary-hover: #0074e0;
+            --success-color: #34c759;
+            --success-hover: #2fb350;
+            --neutral-color: #2a2a2a;
+            --neutral-hover: #333333;
+            --error-color: #ff3b30;
+        }
+
+        @keyframes successPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: var(--bg-color);
+            padding: 16px;
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+
+        .author {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .author a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .author a:hover {
+            color: var(--text-color);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            box-sizing: border-box;
+            font-size: 15px;
+            transition: border-color 0.2s ease;
+            background-color: var(--neutral-color);
+            color: var(--text-color);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .password-container {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .input-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .password-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .password-info {
+            position: absolute;
+            right: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            cursor: help;
+        }
+
+        .password-info:hover::after {
+            content: "Generate an app password in your Bluesky settings. This is different from your regular password.";
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            width: 200px;
+            font-size: 12px;
+            line-height: 1.4;
+            z-index: 1;
+        }
+
+        .password-link {
+            display: block;
+            margin-top: 4px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: fit-content;
+        }
+
+        .password-link:hover {
+            color: var(--text-color);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            position: relative;
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .loading::after {
+            content: "";
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            margin-top: -8px;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        #followButton {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        #unfollowButton {
+            background-color: var(--neutral-color);
+            color: var(--text-color);
+        }
+
+        #followBenediktButton {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        #followButton:not(:disabled):hover {
+            background-color: var(--primary-hover);
+        }
+
+        #unfollowButton:not(:disabled):hover {
+            background-color: var(--neutral-hover);
+        }
+
+        #followBenediktButton:not(:disabled):hover {
+            background-color: var(--success-hover);
+        }
+
+        #result {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 14px;
+            min-height: 20px;
+        }
+
+        .error {
+            color: var(--error-color);
+        }
+
+        .success {
+            color: var(--success-color);
+            animation: successPulse 0.4s ease-in-out;
+        }
+
+        .disclaimer {
+            margin-top: 24px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .disclaimer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .disclaimer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h1>Follow Yourself on Bluesky</h1>
+            <div class="author">by <a href="https://bsky.app/profile/benedikt.phd" target="_blank" rel="noopener noreferrer">@benedikt.phd</a></div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="username" placeholder="username.bsky.social" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+        <div class="password-container">
+            <div class="password-wrapper">
+                <input type="password" id="password" placeholder="App Password">
+                <span class="password-info">ⓘ</span>
+            </div>
+            <a href="https://bsky.app/settings/app-passwords" target="_blank" rel="noopener noreferrer" class="password-link">
+                Get App Password
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+            </a>
+        </div>
+        <button id="followButton" onclick="selfFollow()">Follow Yourself</button>
+        <button id="unfollowButton" onclick="selfUnfollow()">Unfollow Yourself</button>
+        <button id="followBenediktButton" onclick="followBenedikt()">Follow @benedikt.phd</button>
+        <div id="result"></div>
+        <div class="disclaimer">
+            Your password is not stored. All interactions happen directly with Bluesky's API. Deleting your app password is recommended when done. The code is open source and can be inspected directly in this HTML file using browser dev tools. Python script available on <a href="https://github.com/benediktkol/bsky-follow-yourself" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script>
+        let sessionData = null;
+        let lastActionTimestamp = 0;
+        const COOLDOWN_PERIOD = 2000; // 2 seconds cooldown
+
+        function setLoading(buttonId, isLoading) {
+            const button = document.getElementById(buttonId);
+            button.disabled = isLoading;
+            if (isLoading) {
+                button.classList.add('loading');
+            } else {
+                button.classList.remove('loading');
+            }
+        }
+
+        async function getSession(username, password) {
+            const response = await axios.post('https://bsky.social/xrpc/com.atproto.server.createSession', {
+                identifier: username,
+                password: password
+            });
+            return response.data;
+        }
+
+        function sanitizeUsername(username) {
+            // Remove @ if it's at the start of the username
+            return username.startsWith('@') ? username.slice(1) : username;
+        }
+
+        function checkCooldown() {
+            const now = Date.now();
+            if (now - lastActionTimestamp < COOLDOWN_PERIOD) {
+                throw new Error('Please wait a moment before trying again');
+            }
+            lastActionTimestamp = now;
+        }
+
+        async function selfFollow() {
+            const result = document.getElementById('result');
+            result.className = '';
+            result.textContent = '';
+            
+            setLoading('followButton', true);
+            
+            try {
+                checkCooldown();
+                const username = sanitizeUsername(document.getElementById('username').value);
+                const password = document.getElementById('password').value;
+                sessionData = await getSession(username, password);
+                
+                await axios.post('https://bsky.social/xrpc/com.atproto.repo.createRecord', {
+                    repo: sessionData.did,
+                    collection: 'app.bsky.graph.follow',
+                    record: {
+                        subject: sessionData.did,
+                        createdAt: new Date().toISOString()
+                    }
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${sessionData.accessJwt}`
+                    }
+                });
+                result.className = 'success';
+                result.textContent = 'Successfully followed yourself';
+            } catch (error) {
+                result.className = 'error';
+                result.textContent = 'Error: ' + error.message;
+            } finally {
+                setLoading('followButton', false);
+            }
+        }
+
+        async function selfUnfollow() {
+            const result = document.getElementById('result');
+            result.className = '';
+            result.textContent = '';
+
+            setLoading('unfollowButton', true);
+
+            try {
+                checkCooldown();
+                const username = sanitizeUsername(document.getElementById('username').value);
+                const password = document.getElementById('password').value;
+                sessionData = await getSession(username, password);
+                
+                const followResponse = await axios.post('https://bsky.social/xrpc/com.atproto.repo.createRecord', {
+                    repo: sessionData.did,
+                    collection: 'app.bsky.graph.follow',
+                    record: {
+                        subject: sessionData.did,
+                        createdAt: new Date().toISOString()
+                    }
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${sessionData.accessJwt}`
+                    }
+                });
+
+                await axios.post('https://bsky.social/xrpc/com.atproto.repo.deleteRecord', {
+                    repo: sessionData.did,
+                    collection: 'app.bsky.graph.follow',
+                    rkey: followResponse.data.uri.split('/').pop()
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${sessionData.accessJwt}`
+                    }
+                });
+                result.className = 'success';
+                result.textContent = 'Successfully unfollowed yourself';
+            } catch (error) {
+                result.className = 'error';
+                result.textContent = 'Error: ' + error.message;
+            } finally {
+                setLoading('unfollowButton', false);
+            }
+        }
+
+        async function followBenedikt() {
+            const result = document.getElementById('result');
+            result.className = '';
+            result.textContent = '';
+            
+            setLoading('followBenediktButton', true);
+
+            try {
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                sessionData = await getSession(username, password);
+                
+                const resolveResponse = await axios.get('https://bsky.social/xrpc/com.atproto.identity.resolveHandle', {
+                    params: {
+                        handle: 'benedikt.phd'
+                    }
+                });
+                
+                await axios.post('https://bsky.social/xrpc/com.atproto.repo.createRecord', {
+                    repo: sessionData.did,
+                    collection: 'app.bsky.graph.follow',
+                    record: {
+                        subject: resolveResponse.data.did,
+                        createdAt: new Date().toISOString()
+                    }
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${sessionData.accessJwt}`
+                    }
+                });
+                result.className = 'success';
+                result.textContent = 'Successfully followed @benedikt.phd';
+            } catch (error) {
+                result.className = 'error';
+                result.textContent = 'Error: ' + error.message;
+            } finally {
+                setLoading('followBenediktButton', false);
+            }
+        }
+    </script>
+</body>
+</html>
