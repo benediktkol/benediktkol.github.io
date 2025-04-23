@@ -1,3 +1,3 @@
-Copyright (C) 2024 Benedikt Kolbeinsson
+Copyright (C) 2025 Benedikt Kolbeinsson
 
 [benediktkolbeinsson.is](https://benediktkolbeinsson.is)
