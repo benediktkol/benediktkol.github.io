@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   
   <meta name="description" content="Machine learning researcher specialising in computer vision and deep learning methods, with focus on autonomous drones, LLMs and diffusion models. PhD from Imperial College London.">
   <meta name="keywords" content="benedikt, kolbeinsson, benediktkol, researcher, machine learning, computer vision, deep learning, AI">
@@ -27,193 +26,314 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
   <link rel="icon" type="image/png" href="assets/favicon/favicon.png">
 
-  <link rel="stylesheet" href="assets/css/style.css">
-
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800;900&family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <title>Benedikt Kolbeinsson</title>
 
 </head>
 
 <body>
-  <div class="main_wrapper">
-    <div class="section">
-      <div class="header">
-        <div class="row">
-          <div class="box">
-            <div class="content_wrapper">
-              <h1>Hi, I'm Benedikt</h1>
-                <p>My research focuses on advancing deep learning methods and developing novel approaches to solve challenging problems. </p>
-                <p>I specialise in computer vision, particularly for fully autonomous drones. My research also includes LLMs, RAG, diffusion models and knowledge distillation.</p>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="subtitle mono-text">Deep Learning Researcher</div>
+            <h1 class="heading-text">Dr Benedikt<br>Kolbeinsson</h1>
+            <p class="description">
+              My research focuses on advancing deep learning methods and developing novel approaches to solve challenging problems. I specialise in computer vision, particularly for fully autonomous drones, LLMs, RAG, diffusion models and knowledge distillation.
+            </p>
+          </div>
+          <div class="hero-visual">
+            <div class="geometric-bg"></div>
+            <div class="geometric-accent"></div>
+            <div class="profile-illustration">
+              <img src="assets/images/avatar.png" alt="Benedikt Kolbeinsson" class="profile-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="section research-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-number mono-text">01. Research</div>
+          <h2 class="section-title heading-text">Featured Research</h2>
+          <p class="section-subtitle">
+            Exploring the intersection of computer vision, autonomous systems and artificial intelligence through innovative methods and real-world applications.
+          </p>
+        </div>
+        <div class="research-layout">
+          <div class="research-intro slide-in-left">
+            <h3>Research Overview</h3>
+            <p>My research spans multiple domains within artificial intelligence, with particular emphasis on practical applications that can solve real-world challenges. I focus on developing novel, robust systems that can operate in complex, dynamic environments.</p>
+            <div style="margin-top: 2rem;">
+              <a href="https://scholar.google.com/citations?user=xb2ha3EAAAAJ&hl=en" class="btn" style="display: inline-block; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Google Scholar</a>
+            </div>
+          </div>
+          <div class="research-items">
+            <div class="research-item slide-in-right">
+              <div class="research-content">
+                <h4>Multi-Class Segmentation from Aerial Views using Recursive Noise Diffusion</h4>
+                <div class="research-tags">
+                  <span class="tag mono-text">WACV 2024</span>
+                  <span class="tag mono-text">Computer Vision</span>
+                  <span class="tag mono-text">Diffusion Models</span>
+                </div>
+                <p>Novel approach to multi-class segmentation for aerial imagery using recursive noise diffusion techniques, advancing the state-of-the-art in autonomous drone vision systems.</p>
+                <div style="margin-top: 1rem;">
+                  <a href="https://openaccess.thecvf.com/content/WACV2024/html/Kolbeinsson_Multi-Class_Segmentation_From_Aerial_Views_Using_Recursive_Noise_Diffusion_WACV_2024_paper.html" target="_blank" style="color: var(--color-accent); text-decoration: none; font-size: 0.9rem;">Paper</a>
+                </div>
               </div>
             </div>
-          <div class="box">
-            <div class="content_wrapper">
-              <img src="assets/images/profile.jpg" alt="Benedikt Kolbeinsson" class="img_main">
+            <div class="research-item slide-in-right">
+              <div class="research-content">
+                <h4>DDOS: The Drone Depth and Obstacle Segmentation Dataset</h4>
+                <div class="research-tags">
+                  <span class="tag mono-text">CVPR 2024</span>
+                  <span class="tag mono-text">Dataset</span>
+                  <span class="tag mono-text">Autonomous Drones</span>
+                </div>
+                <p>Comprehensive dataset for drone depth estimation and obstacle segmentation, providing the research community with essential resources for advancing autonomous aerial navigation.</p>
+                <div style="margin-top: 1rem;">
+                  <a href="https://openaccess.thecvf.com/content/CVPR2024W/VDU/html/Kolbeinsson_DDOS_The_Drone_Depth_and_Obstacle_Segmentation_Dataset_CVPRW_2024_paper.html" target="_blank" style="color: var(--color-accent); text-decoration: none; font-size: 0.9rem;">Paper</a>
+                </div>
+              </div>
+            </div>
+            <div class="research-item slide-in-right">
+              <div class="research-content">
+                <h4>UCorr: Wire Detection and Depth Estimation for Autonomous Drones</h4>
+                <div class="research-tags">
+                  <span class="tag mono-text">ROBOVIS 2024</span>
+                  <span class="tag mono-text">Safety</span>
+                  <span class="tag mono-text">Detection</span>
+                </div>
+                <p>Advanced wire detection system for autonomous drones, addressing critical safety challenges in aerial navigation through improved depth estimation and obstacle detection.</p>
+                <div style="margin-top: 1rem;">
+                  <a href="https://doi.org/10.1007/978-3-031-59057-3_12" target="_blank" style="color: var(--color-accent); text-decoration: none; font-size: 0.9rem;">Paper</a>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top: 3rem; text-align: center;">
+              <p style="color: var(--color-secondary); font-size: 0.9rem;">More publications available on <a href="https://scholar.google.com/citations?user=xb2ha3EAAAAJ&hl=en" style="color: var(--color-accent); text-decoration: none;">Google Scholar</a></p>
             </div>
           </div>
         </div>
-        <div class="arrow">
-          <img src="assets/icons/expand_down.svg" alt="arrow" class="icon_arrow animate-indicator">
-        </div>
       </div>
-    </div>
-    
-    <div class="section">
-      <div class="row">
-        <div class="caption">
-          <div class="line"></div>
-            <h2>Education</h2>
-          <div class="line"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="box bg_color_blue_1">
-          <div class="content_wrapper interactive ">
-            <h3>PhD</h3>
-            <h4>Deep Learning for Autonomous Drone Vision</h4>
-            <p>Imperial College London</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="box bg_color_blue_2">
-          <div class="content_wrapper interactive">
-            <h3>MEng</h3>
-            <h4>Electrical and Electronic Engineering with Management</h4>
-            <p>Imperial College London</p>
-          </div>
-        </div>
-        <div class="box bg_color_blue_3">
-          <div class="content_wrapper interactive">
-            <h3>Stúdentspróf</h3>
-            <p>Verzlunarskóli Íslands</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <div class="row">
-        <div class="caption">
-          <div class="line"></div>
-            <h2>Work</h2>
-          <div class="line"></div>
+    <!-- Education Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-number mono-text">02. Education</div>
+          <h2 class="section-title heading-text">Academic Background</h2>
+          <p class="section-subtitle">
+            A foundation in engineering, refined through advanced study and research.
+          </p>
+        </div>
+        <div class="education-timeline">
+          <div class="timeline-line"></div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta mono-text">PhD • Imperial College London</div>
+              <h3 class="heading-text">Deep Learning for Autonomous Drone Vision</h3>
+              <h4>Doctor of Philosophy • 2025</h4>
+              <p>Research in AI and machine learning, focusing on computer vision and autonomous systems. Developed novel deep learning architectures and datasets, with publications in top-tier conferences.</p>
+              <div style="margin-top: 1rem;">
+                <a href="assets/theses/Benedikt-Kolbeinsson-PhD-Thesis.pdf" target="_blank" style="color: var(--color-accent); text-decoration: none; font-size: 0.9rem;">PhD Thesis</a>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta mono-text">MEng • Imperial College London</div>
+              <h3 class="heading-text">Electrical and Electronic Engineering with Management</h3>
+              <h4>Master of Engineering • 2019</h4>
+              <p>Thesis on GANs for domain transfer, specialised in machine learning and computer vision.</p>
+              <div style="margin-top: 1rem;">
+                <a href="assets/theses/Benedikt-Kolbeinsson-MEng-Thesis.pdf" target="_blank" style="color: var(--color-accent); text-decoration: none; font-size: 0.9rem;">MEng Thesis</a>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item fade-in">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta mono-text">Stúdentspróf • Verzlunarskóli Íslands</div>
+              <h3 class="heading-text">Stúdentspróf - Náttúrufærðibraut, eðlisfræðisvið</h3>
+              <h4>Verzlunarskóli Íslands • 2015</h4>
+              <p>Physics track with foundation studies in mathematics and sciences, establishing early academic excellence in analytical thinking and problem-solving.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <a href="https://regava.com" class="box bg_color_green_1">
-          <div class="content_wrapper interactive ">
-            <h3>Regava</h3>
-            <p>Co-Founder</p>
-          </div>
-        </a>
-      </div>
-      <div class="row">
-        <div class="box bg_color_green_2">
-          <div class="content_wrapper interactive">
-            <h3>Deepair</h3>
-            <p>Research scientist (part-time)</p>
-          </div>
-        </div>
-        <div class="box bg_color_green_3">
-          <div class="content_wrapper interactive">
-            <h3>Icelandic COVID-19 Vaccine Taskforce</h3>
-            <p>Data scientist</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <div class="row">
-        <div class="caption">
-          <div class="line"></div>
-            <h2>Awards</h2>
-          <div class="line"></div>
+    <!-- Experience Section -->
+    <section class="section experience-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-number mono-text">03. Experience</div>
+          <h2 class="section-title heading-text">Professional Journey</h2>
+          <p class="section-subtitle">
+            Bridging the gap between cutting-edge research and real-world applications through entrepreneurship and collaborative innovation.
+          </p>
+        </div>
+        <div class="experience-grid">
+          <div class="experience-main">
+            <div class="experience-item slide-in-left">
+              <div class="experience-meta mono-text">Co-founder & CTO • Regava</div>
+              <h3 class="heading-text">AI-Driven Regulatory Compliance</h3>
+              <h4>June 2024 - Present</h4>
+              <p>Leading research and development of LLM-powered solutions for regulatory compliance in financial services. Developing AI-driven platform that intelligently navigates complex financial regulations through proactive horizon scanning and real-time compliance analysis.</p>
+            </div>
+            <div class="experience-item slide-in-left">
+              <div class="experience-meta mono-text">Research Scientist • Deepair</div>
+              <h3 class="heading-text">AI Solutions for Travel Industry</h3>
+              <h4>May 2018 - June 2022 (Part-time)</h4>
+              <p>Developed and deployed reinforcement learning systems for automated pricing in the travel industry. Presented research on fairness in reinforcement learning at NeurIPS 2020 workshop, addressing real-world challenges in dynamic pricing systems.</p>
+            </div>
+            <div class="experience-item slide-in-left">
+              <div class="experience-meta mono-text">Data Scientist • Icelandic COVID-19 Vaccine Taskforce</div>
+              <h3 class="heading-text">Public Health Impact</h3>
+              <h4>April 2021 - June 2021</h4>
+              <p>Led data science initiatives that increased daily vaccination rates from 5k to 17k, implemented live monitoring systems, and optimised patient recruitment through predictive analytics during Iceland's national vaccination programme.</p>
+            </div>
+          </div>
+          <div class="experience-sidebar slide-in-right">
+            <h3 class="heading-text">Current Focus</h3>
+            <p>Balancing entrepreneurial ventures with cutting-edge research, working to translate advanced AI research into practical solutions that can benefit society and industry.</p>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="box bg_color_red_1">
-          <div class="content_wrapper interactive">
+    </section>
+
+    <!-- Awards Section -->
+    <section class="section awards-section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-number mono-text">04. Recognition</div>
+          <h2 class="section-title heading-text">Awards & Achievements</h2>
+          <p class="section-subtitle">
+            Recognition for excellence in research, innovation and academic achievement across multiple institutions and organisations.
+          </p>
+        </div>
+        <div class="awards-masonry">
+          <div class="award-item fade-in">
             <h3>Chartered Engineer</h3>
-            <p>Ministry of Higher Education, Science and Innovation</p>
+            <p class="award-meta">Ministry of Higher Education, Science and Innovation • 2020</p>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="box bg_color_red_2">
-          <div class="content_wrapper interactive">
+          <div class="award-item fade-in">
             <h3>Winner of the Huawei Autonomous Vehicles Challenge</h3>
-            <p>Huawei</p>
+            <p class="award-meta">Huawei Technologies • 2019</p>
           </div>
-        </div>
-        <div class="box bg_color_red_3">
-          <div class="content_wrapper interactive">
-            <h3>Best one minute thesis</h3>
-            <p>Imperial College London</p>
+          <div class="award-item fade-in">
+            <h3>Best One Minute Thesis</h3>
+            <p class="award-meta">Imperial College London</p>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="box bg_color_red_1">
-          <div class="content_wrapper interactive">
-            <h3>Associateship of the City and Guilds of London Institute</h3>
-            <p>City and Guilds of London Institute (ACGI) </p>
-          </div>
-        </div>
-        <div class="box bg_color_red_2">
-          <div class="content_wrapper interactive">
+          <div class="award-item fade-in">
             <h3>Best Third Year Project</h3>
-            <p>Imperial College London</p>
+            <p class="award-meta">Imperial College London • 2018</p>
+          </div>
+          <div class="award-item fade-in">
+            <h3>Outstanding Achievement in Mathematics</h3>
+            <p class="award-meta">Íslenska Stærðfræðafélagið (The Icelandic Mathematical Society)</p>
+          </div>
+          <div class="award-item fade-in">
+            <h3>Associateship of the City and Guilds of London Institute (ACGI)</h3>
+            <p class="award-meta">City and Guilds of London Institute</p>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="box bg_color_red_3">
-          <div class="content_wrapper interactive">
-            <h3>Award for Outstanding Achievement in Mathematics</h3>
-            <p>Íslenska Stærðfræðafélagið <br>(The Icelandic Mathematical Society)</p>
-          </div>
-        </div>
-        <div class="box bg_color_red_1">
-          <div class="content_wrapper interactive">
-            <h3>Frank Rudolph Award for Science</h3>
-            <p>The American School in London</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <div class="row">
-        <div class="caption">
-          <div class="line"></div>
-            <h2>Contact</h2>
-          <div class="line"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="box bg_color_yellow_1">
-          <div class="content_wrapper">
-            <h3>Find me here</h3>
-            <div class="icon_row">
-              <a href="https://bsky.app/profile/benedikt.phd">
-                <img src="assets/icons/bluesky_logo.svg" alt="bluesky" class="icon_social">
+    <!-- Contact Section -->
+    <section class="section contact-section">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-content fade-in">
+            <div class="section-number mono-text">05. Connect</div>
+            <h2 class="section-title heading-text">Get in Touch</h2>
+            <p class="section-subtitle">
+              Feel free to connect through these platforms.
+            </p>
+            <div class="social-links">
+              <a href="https://bsky.app/profile/benedikt.phd" class="social-link" title="Bluesky">
+                <img src="assets/icons/bluesky_logo.svg" alt="Bluesky" class="social-icon">
+                Bluesky
               </a>
-              <a href="https://github.com/benediktkol">
-                <img src="assets/icons/github_logo.svg" alt="github" class="icon_social">
+              <a href="https://www.threads.com/@benediktkolbeinsson" class="social-link" title="Threads">
+                <img src="assets/icons/threads_logo.svg" alt="Threads" class="social-icon">
+                Threads
               </a>
-              <a href="https://www.linkedin.com/in/benedikt/">
-                <img src="assets/icons/linkedin_logo.svg" alt="linkedin" class="icon_social">
+              <a href="https://github.com/benediktkol" class="social-link" title="GitHub">
+                <img src="assets/icons/github_logo.svg" alt="GitHub" class="social-icon">
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/benedikt/" class="social-link" title="LinkedIn">
+                <img src="assets/icons/linkedin_logo.svg" alt="LinkedIn" class="social-icon">
+                LinkedIn
               </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
+
+  <script>
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scrolling for any anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add some scroll-based parallax effects
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.geometric-bg, .geometric-accent');
+      
+      parallaxElements.forEach(element => {
+        const speed = 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+  </script>
 </body>
 </html>
