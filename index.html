@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://benedikt.phd">
   <meta property="og:description" content="Machine learning researcher specialising in computer vision and deep learning methods, with focus on autonomous drones, LLMs and diffusion models. PhD from Imperial College London.">
   <meta property="og:image" content="https://benedikt.phd/assets/images/banner.jpg"> 
-  <meta property="og:image:alt" content="Abstract waves">
+  <meta property="og:image:alt" content="Website banner">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">   
 
@@ -162,7 +162,7 @@
         "description": "Machine learning researcher specialising in computer vision and deep learning methods, with focus on autonomous drones, LLMs and diffusion models. PhD from Imperial College London.",
         "inLanguage": "en-GB",
         "datePublished": "2016-05-18",
-        "dateModified": "2025-09-19T18:34:02+02:00"
+        "dateModified": "2025-09-22T21:00:00+02:00"
       },
       {
         "@type": "Thesis",
@@ -228,8 +228,6 @@
             </p>
           </div>
           <div class="hero-visual">
-            <div class="geometric-bg"></div>
-            <div class="geometric-accent"></div>
             <div class="profile-illustration">
               <img src="assets/images/avatar.png" alt="Stylised portrait of Benedikt Kolbeinsson" class="profile-image">
             </div>
@@ -249,7 +247,7 @@
           </p>
         </div>
         <div class="research-layout">
-          <div class="research-intro slide-in-left">
+          <div class="research-intro slide-in-up">
             <h3>Research Overview</h3>
             <p>My research spans multiple domains within artificial intelligence, with particular emphasis on practical applications that can solve real-world challenges. I focus on developing novel, robust systems that can operate in complex, dynamic environments.</p>
             <div style="margin-top: 2rem;">
@@ -257,7 +255,7 @@
             </div>
           </div>
           <div class="research-items">
-            <div class="research-item slide-in-right">
+            <div class="research-item slide-in-up">
               <div class="research-content">
                 <h4>Multi-Class Segmentation from Aerial Views using Recursive Noise Diffusion</h4>
                 <div class="research-tags">
@@ -271,7 +269,7 @@
                 </div>
               </div>
             </div>
-            <div class="research-item slide-in-right">
+            <div class="research-item slide-in-up">
               <div class="research-content">
                 <h4>DDOS: The Drone Depth and Obstacle Segmentation Dataset</h4>
                 <div class="research-tags">
@@ -285,7 +283,7 @@
                 </div>
               </div>
             </div>
-            <div class="research-item slide-in-right">
+            <div class="research-item slide-in-up">
               <div class="research-content">
                 <h4>UCorr: Wire Detection and Depth Estimation for Autonomous Drones</h4>
                 <div class="research-tags">
@@ -368,26 +366,26 @@
         </div>
         <div class="experience-grid">
           <div class="experience-main">
-            <div class="experience-item slide-in-left">
+            <div class="experience-item slide-in-up">
               <div class="experience-meta mono-text">Co-founder & CTO • Regava</div>
               <h3 class="heading-text">AI-Driven Regulatory Compliance</h3>
               <h4>June 2024 - Present</h4>
               <p>Leading research and development of LLM-powered solutions for regulatory compliance in financial services. Developing AI-driven platform that intelligently navigates complex financial regulations through proactive horizon scanning and real-time compliance analysis.</p>
             </div>
-            <div class="experience-item slide-in-left">
+            <div class="experience-item slide-in-up">
               <div class="experience-meta mono-text">Research Scientist • Deepair</div>
               <h3 class="heading-text">AI Solutions for Travel Industry</h3>
               <h4>May 2018 - June 2022 (Part-time)</h4>
               <p>Developed and deployed reinforcement learning systems for automated pricing in the travel industry. Presented research on fairness in reinforcement learning at NeurIPS 2020 workshop, addressing real-world challenges in dynamic pricing systems.</p>
             </div>
-            <div class="experience-item slide-in-left">
+            <div class="experience-item slide-in-up">
               <div class="experience-meta mono-text">Data Scientist • Icelandic COVID-19 Vaccine Taskforce</div>
               <h3 class="heading-text">Public Health Impact</h3>
               <h4>April 2021 - June 2021</h4>
               <p>Led data science initiatives that increased daily vaccination rates from 5k to 17k, implemented live monitoring systems, and optimised patient recruitment through predictive analytics during Iceland's national vaccination programme.</p>
             </div>
           </div>
-          <div class="experience-sidebar slide-in-right">
+          <div class="experience-sidebar slide-in-up">
             <h3 class="heading-text">Current Focus</h3>
             <p>Balancing entrepreneurial ventures with cutting-edge research, working to translate advanced AI research into practical solutions that can benefit society and industry.</p>
           </div>
@@ -472,7 +470,7 @@
     // Intersection Observer for animations
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
+      rootMargin: '0px 0px 0px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -484,7 +482,7 @@
     }, observerOptions);
 
     // Observe all animated elements
-    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+    document.querySelectorAll('.fade-in, .slide-in-up').forEach(el => {
       observer.observe(el);
     });
 
