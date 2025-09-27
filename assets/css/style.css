@@ -570,6 +570,19 @@ body {
   box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
 }
 
+/* Text content links */
+.text-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  font-size: 0.9rem;
+  transition: text-decoration-color 0.3s ease;
+}
+
+.text-link:hover {
+  text-decoration-color: var(--color-accent);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .research-layout {
@@ -688,15 +701,15 @@ body {
   :root {
     --color-primary: #E5E5E5;
     --color-secondary: #A0A0A0;
-    --color-accent: #FF7A4A;
+    --color-accent: #FF6B35;
     --color-bg: #0F0F0F;
     --color-bg-alt: #1A1A1A;
     --color-border: #333333;
   }
 
-  /* Contact section needs different background in dark mode */
+  /* Contact section uses standard bg-alt in dark mode */
   .contact-section {
-    background: #2A2A2A;
+    background: var(--color-bg-alt);
   }
 
   /* Adjust social link borders for dark mode */
@@ -715,12 +728,4 @@ body {
     background: #333333;
   }
 
-  /* Social icons in dark mode - keep them visible */
-  .social-icon {
-    filter: brightness(0) invert(0.9);
-  }
-
-  .social-link:hover .social-icon {
-    filter: brightness(0) saturate(100%) invert(41%) sepia(72%) saturate(2165%) hue-rotate(349deg) brightness(101%) contrast(102%);
-  }
 }
