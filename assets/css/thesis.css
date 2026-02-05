@@ -1,0 +1,344 @@
+/* Copyright (C) 2026 Benedikt Kolbeinsson */
+
+/* Thesis-specific styles */
+
+.thesis-page {
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.thesis-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.thesis-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.thesis-meta {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.thesis-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+}
+
+.thesis-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.thesis-section {
+  margin-bottom: 3rem;
+}
+
+.thesis-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.thesis-section p {
+  line-height: 1.8;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.thesis-section ul {
+  line-height: 1.8;
+  color: var(--color-secondary);
+}
+
+.thesis-section strong {
+  font-weight: 600;
+}
+
+/* Thesis Access Card */
+.thesis-access-card {
+  background: var(--color-bg-alt);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+.thesis-access-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.thesis-access-meta {
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+}
+
+.thesis-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thesis-action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.thesis-action-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.thesis-action-size {
+  font-size: 0.75rem;
+  color: var(--color-secondary);
+  font-family: var(--font-mono);
+}
+
+.thesis-action-btn.primary {
+  background: var(--color-accent);
+  color: white;
+  border: 2px solid var(--color-accent);
+}
+
+.thesis-action-btn.primary:hover {
+  background: #e55a2b;
+  border-color: #e55a2b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.thesis-action-btn.secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-border);
+}
+
+.thesis-action-btn.secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Material Symbols styling for buttons */
+.thesis-action-btn .material-symbols-outlined {
+  font-size: 18px;
+  vertical-align: middle;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 20;
+}
+
+/* Legacy styles - kept for compatibility */
+.pdf-link-section {
+  margin: 2.5rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pdf-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.pdf-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.pdf-meta {
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+  margin-left: 1.5rem;
+}
+
+.keywords {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.keyword-tag {
+  padding: 0.4rem 0.8rem;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--color-secondary);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+.back-link::before {
+  content: "←";
+  margin-right: 0.5rem;
+}
+
+.thesis-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  margin-top: 0.5rem;
+}
+
+.citation-box {
+  background: var(--color-bg-alt);
+  padding: 1.5rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* BibTeX section */
+.bibtex-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.bibtex-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.bibtex-container {
+  position: relative;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.bibtex-container:hover {
+  border-color: var(--color-accent);
+}
+
+.bibtex-code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--color-primary);
+  margin: 0;
+  padding-right: 3rem;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.copy-bibtex-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.copy-bibtex-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.copy-bibtex-btn.copied {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.copy-bibtex-btn .material-symbols-outlined {
+  font-size: 18px;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 20;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .thesis-page {
+    padding: 2rem 0;
+  }
+
+  .thesis-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .thesis-access-card {
+    padding: 1.5rem;
+  }
+
+  .thesis-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .thesis-action-item {
+    width: 100%;
+  }
+
+  .thesis-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
